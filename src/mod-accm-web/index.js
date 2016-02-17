@@ -3,10 +3,11 @@ import Router        from "vertx-web-js/router"
 import SockJSHandler from "vertx-web-js/sock_js_handler"
 import StaticHandler from "vertx-web-js/static_handler"
 
-
 const staticHandler =  StaticHandler.create(`${BASE_DIR}/webroot`).handle
 
 const router = Router.router(vertx)
+
+//todo: Implement the eventbus
 
 router.route().handler(rc =>{
   const path = rc.normalisedPath()

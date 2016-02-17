@@ -1,6 +1,7 @@
 var gulp    = require('gulp');
 var babel   = require('gulp-babel');
 var webpack = require('webpack-stream');
+var todo    = require('gulp-todoist');
 var del     = require('del');
 
 var paths = {
@@ -10,7 +11,7 @@ var paths = {
   dest   :"bin"
 }
 
-gulp.task('build', ['copy', 'build-client', 'build-server'])
+gulp.task('build', ['todo', 'copy', 'build-client', 'build-server'])
 
 gulp.task('todo', function() {
   return gulp.src(paths.js)
@@ -18,7 +19,7 @@ gulp.task('todo', function() {
 });
 
 gulp.task('build-server', function(){
-  gulp.src([paths.js, "!"+paths.webroot])
+  gulp.src([paths.js, "!"+paths.webroot+"/**/*"])
   .pipe(babel({
     presets: ['es2015', 'stage-0'],
     plugins: ['transform-object-assign']
