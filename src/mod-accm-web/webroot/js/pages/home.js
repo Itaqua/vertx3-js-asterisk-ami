@@ -10,6 +10,11 @@ export default React.createClass({
           <p className="lead">
             Example of combining Vertx.io and React.js for realtime communications and monitoring
           </p>
+          <p className="lead">
+          <small>
+            click on <a href="/peers">Peers</a> to continue
+          <small>
+          </p>
         </div>
       </div>
     )

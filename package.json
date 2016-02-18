@@ -31,6 +31,7 @@
     "react-dom": "^0.14.7",
     "style-loader": "^0.13.0",
     "stylus-loader": "^1.5.1",
+    "vertx-eventbus-client": "0.0.4",
     "vertx3-full": "^3.2.1",
     "webpack": "^1.12.13",
     "webpack-stream": "^3.1.0"

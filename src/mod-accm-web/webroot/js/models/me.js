@@ -1,6 +1,7 @@
-import app    from 'ampersand-app'
-import State  from 'ampersand-state'
-import md5    from 'md5'
+import app    from "ampersand-app"
+import State  from "ampersand-state"
+import md5    from "md5"
+import "../vertx"
 
 export default State.extend({  
   initialize(){

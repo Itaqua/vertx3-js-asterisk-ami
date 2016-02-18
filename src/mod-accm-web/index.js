@@ -2,12 +2,25 @@ import {BASE_DIR}    from "../../conf/application"
 import Router        from "vertx-web-js/router"
 import SockJSHandler from "vertx-web-js/sock_js_handler"
 import StaticHandler from "vertx-web-js/static_handler"
+import address       from "./event-address"
 
-const staticHandler =  StaticHandler.create(`${BASE_DIR}/webroot`).handle
+const ebHandler = SockJSHandler.create(vertx).bridge(
+  {
+    inboundPermitteds: [{
+        address:address.todos
+    }],
+    outboundPermitteds: [{
+        address:address.todosEvent
+    }]
+  }
+)
+
+//todo: Implement the events to the AMI
 
 const router = Router.router(vertx)
+router.route("/eventbus/*").handler(ebHandler.handle)
 
-//todo: Implement the eventbus
+const staticHandler =  StaticHandler.create(`${BASE_DIR}/webroot`).handle
 
 router.route().handler(rc =>{
   const path = rc.normalisedPath()
