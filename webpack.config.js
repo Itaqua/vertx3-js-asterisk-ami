@@ -13,6 +13,7 @@ module.exports = {
 
   module: {
     loaders: [
+      { test: /\.styl$/, loader: 'style!css!stylus' },
       { test: /\.html$/, loader: 'raw' },
       { test: /(\.js$)|(\.jsx$)/,
         loader: 'babel',

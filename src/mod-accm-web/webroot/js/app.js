@@ -1,13 +1,19 @@
-import React     from 'react'
-import ReactDOM  from 'react-dom'
+import Router from './router'
+import app    from 'ampersand-app'
+import Me     from './models/me'
 
+// just to debug...
+//window.app = app
 
-const Hola = React.createClass({
-  render() {
-    return (
-      <div>Hola Mundo</div>
-    )
-  },
+app.extend({
+  init (){
+    this.DOM = document.getElementById('root')
+    
+    this.me = new Me()
+    this.me.fetchInitialData()
+    this.router = new Router()
+    this.router.history.start()
+  }
 })
 
-ReactDOM.render(<Hola/>, document.getElementById('root'))
+app.init()
