@@ -9,11 +9,11 @@ export default React.createClass({
   mixins: [ampersandMixin],
 
   render () {
-    const {me} = this.props
+    const {me, pageName} = this.props
 
     return (
       <NavHelper>
-        <Header/>
+        <Header me={me} pageName={pageName}/>
         {this.props.children}
       </NavHelper>
     )

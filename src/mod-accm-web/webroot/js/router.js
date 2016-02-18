@@ -7,10 +7,12 @@ import Layout    from './layout'
 import Home      from "./pages/home"
 import Register  from "./pages/register"
 import Contact   from "./pages/contact"
+import Peers     from "./pages/peers"
+import FoF       from "./pages/404"
 
 function requiresRegister(handlerName) {
   return function () {
-    if (app.me.token) {
+    if (app.me.email) {
       this[handlerName].apply(this, arguments)
     } else {
       this.redirectTo('/register')
@@ -18,21 +20,20 @@ function requiresRegister(handlerName) {
   }
 }
 
-function renderPage(page, opts = {layout: true}) {
-  if (opts.layout) {
-    page = (
-      <Layout me={app.me}>
-        {page}
-      </Layout>
-    )
-  }
+function renderPage(page) {
+  page = (
+    <Layout me={app.me} pageName={page.type.displayName}>
+      {page}
+    </Layout>
+  )
 
   ReactDOM.render(page, app.DOM)
 }
 
 export default Router.extend({
   routes:{
-    ''           :'public',
+    ''           :'home',
+    'home'       :'home',
     'register'   :'register',
     'unregister' :'unregister',
     'contact'    :'contact',
@@ -40,7 +41,7 @@ export default Router.extend({
     '*fourOhfour': 'fourOhfour'
   },
 
-  public (){
+  home (){
     renderPage(<Home/>)
   },
 
@@ -53,9 +54,17 @@ export default Router.extend({
     renderPage(<Contact/>)
   },
 
+  peers(){
+    renderPage(<Peers/>)
+  },
+
   unregister(){
     window.sessionStorage.clear()
     window.location = '/'
   },
+
+  fourOhfour(){
+    renderPage(<FoF/>)
+  }
 
 })

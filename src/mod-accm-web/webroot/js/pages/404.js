@@ -1,14 +1,13 @@
 import React from 'react'
 
 export default React.createClass({
-  displayName: "home",
   render() {
     return (
       <div className="container">
         <div className="starter-template">
-          <h1>vertx-js-asterisk-ami</h1>
+          <h1>404</h1>
           <p className="lead">
-            Example of combining Vertx.io and React.js for realtime communications and monitoring
+            Nothing to see here, move along.
           </p>
         </div>
       </div>

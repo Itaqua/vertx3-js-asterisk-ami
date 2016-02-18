@@ -3,7 +3,7 @@ import app    from 'ampersand-app'
 import Me     from './models/me'
 
 // just to debug...
-//window.app = app
+window.app = app
 
 app.extend({
   init (){

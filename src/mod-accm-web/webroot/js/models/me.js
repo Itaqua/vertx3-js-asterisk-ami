@@ -1,3 +1,4 @@
+import app    from 'ampersand-app'
 import State  from 'ampersand-state'
 import md5    from 'md5'
 
@@ -13,7 +14,8 @@ export default State.extend({
   },
 
   register(email){
-    
+    this.email = email
+    app.router.redirectTo('/peers')
   },
 
   onEmailChange(){
@@ -22,10 +24,10 @@ export default State.extend({
   },
 
   fetchInitialData () {
-    if(this.token){
-      this.avatar_url = `http://www.gravatar.com/avatar/${md5(email)}`
+    if(this.email){
+      this.avatar_url = `http://www.gravatar.com/avatar/${md5(this.email)}`
     }else{
-      this.avatar_url = undefined
+      this.avatar_url = ''
     }
   },
 })
