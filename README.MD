@@ -21,3 +21,6 @@ npm install
 then run: ./run.sh
 
 it will build and run the app looking for changes on the "src" directory
+
+
+yo need to "register" using your email (octavio.luna@gmail.com has a gravatar) and if the mail is associated with a gravatar you will see it at the top right (where you can later unregister)
