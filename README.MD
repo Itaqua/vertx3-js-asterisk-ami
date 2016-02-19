@@ -26,6 +26,8 @@ then run: ./run.sh
 
 it will build and run the app looking for changes on the "src" directory
 
+Open a browser and point it to: <http://localhost:8080>
+
 
 yo need to "register" using your email (octavio.luna@gmail.com has a gravatar) and if the mail is associated with a gravatar you will see it at the top right (where you can later unregister)
 
