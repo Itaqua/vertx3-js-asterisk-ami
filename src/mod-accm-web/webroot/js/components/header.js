@@ -6,7 +6,7 @@ export default React.createClass({
     const menuList = ["Home", "Peers", "Contact"].map(name => {
       const nameLow = name.toLowerCase()
       const clazz = (nameLow == pageName)? "active" : ""
-      return <li key={nameLow} className={clazz}><a href={nameLow}>{name}</a></li>
+      return (<li key={nameLow} className={clazz}><a href={nameLow}>{name}</a></li>)
     }) 
 
     const user = (me.email)?

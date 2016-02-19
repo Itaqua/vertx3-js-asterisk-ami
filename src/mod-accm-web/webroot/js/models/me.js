@@ -1,7 +1,7 @@
 import app    from "ampersand-app"
 import State  from "ampersand-state"
 import md5    from "md5"
-import "../vertx"
+import MessageCollection from "./message-collection"
 
 export default State.extend({  
   initialize(){
@@ -12,6 +12,10 @@ export default State.extend({
   session: {
     email: 'string',
     avatar_url: 'string'
+  },
+
+  collections: {
+    messages: MessageCollection
   },
 
   register(email){

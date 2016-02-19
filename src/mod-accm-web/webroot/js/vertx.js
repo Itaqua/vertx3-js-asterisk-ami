@@ -1,7 +1,5 @@
-import {EventBus} from "vertx-eventbus-client"
+import EventBus from "vertx3-eventbus-client"
 import address    from "../../event-address"
-
-console.log("connecting to vert.x Event Buss")
         
 var eb;
 
@@ -21,6 +19,7 @@ function todosEventHandler(err, success){
 }
 
 function registerEventBus(){
+  console.log("connecting to vert.x Event Buss")
   eb = new EventBus("/eventbus/")
 
   eb.onopen = ()=>{
@@ -40,4 +39,6 @@ function registerEventBus(){
     setTimeout(()=>{ this.registerEventBus() }, 5000)
   }  
 }
+
+registerEventBus()
 

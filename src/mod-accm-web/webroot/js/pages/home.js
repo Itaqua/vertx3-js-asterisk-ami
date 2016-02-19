@@ -13,7 +13,7 @@ export default React.createClass({
           <p className="lead">
           <small>
             click on <a href="/peers">Peers</a> to continue
-          <small>
+          </small>
           </p>
         </div>
       </div>

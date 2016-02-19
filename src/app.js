@@ -2,6 +2,7 @@ import "./setup"
 import {BASE_DIR} from "../conf/application"
 
 const verticles = [
+  "mod-messages",
   "mod-accm-web"
 ]
 

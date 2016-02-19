@@ -55,7 +55,7 @@ export default Router.extend({
   },
 
   peers(){
-    renderPage(<Peers/>)
+    renderPage(<Peers me={app.me}/>)
   },
 
   unregister(){

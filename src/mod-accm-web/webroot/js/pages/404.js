@@ -1,3 +1,6 @@
+/**
+ * 404 page for thos unknown Routes
+ */
 import React from 'react'
 
 export default React.createClass({

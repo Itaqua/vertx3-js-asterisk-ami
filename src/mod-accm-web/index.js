@@ -2,7 +2,7 @@ import {BASE_DIR}    from "../../conf/application"
 import Router        from "vertx-web-js/router"
 import SockJSHandler from "vertx-web-js/sock_js_handler"
 import StaticHandler from "vertx-web-js/static_handler"
-import address       from "./event-address"
+import address       from "../mod-messages/event-address"
 
 const ebHandler = SockJSHandler.create(vertx).bridge(
   {
