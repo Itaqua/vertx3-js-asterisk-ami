@@ -20,7 +20,7 @@ How to run
 First install the dependencies:
 npm install
 
-(you may need to install gulp globaly: npm install -g gulp)
+(you may need to install gulp globally: npm install -g gulp)
 
 then run: ./run.sh
 
