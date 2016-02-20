@@ -25,7 +25,7 @@ const staticHandler =  StaticHandler.create(`${BASE_DIR}/webroot`).handle
 router.route().handler(rc =>{
   const path = rc.normalisedPath()
   console.log("Path: " + path)
-  if(path != "/" && !path.startsWith("/js") && !path.startsWith("/themes")){
+  if(path != "/" && !path.startsWith("/js")){
     console.log("reroute")
     rc.reroute("/")
   }

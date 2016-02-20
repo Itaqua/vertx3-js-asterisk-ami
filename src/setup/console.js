@@ -29,18 +29,25 @@ const Colors = {
 
 const log = console.log
 
+function loggerc(color, ...args){
+  var str = ""
+  args.forEach(arg => {
+    let strobj = JSON.stringify(arg)
+    if(strobj === undefined) strobj = `${arg}`
+    str += strobj + " "
+  })
+  log(`${color}${str}${Colors.Reset}`)
+}
+
 function logger(color){
   return function(...args){
-    var str = ""
-    args.forEach(arg => {
-      let strobj = JSON.stringify(arg)
-      if(strobj === undefined) strobj = `${arg}`
-      str += strobj + " "
-    })
-    log(`${color}${str}${Colors.Reset}`)
+    loggerc(color, args)
   }
 }
 
-console.log   = logger(Colors.FgCyan)
-console.error = logger(Colors.FgRed)
-console.warn  = logger(Colors.FgYellow)
+console.log    = logger(Colors.FgCyan)
+console.error  = logger(Colors.FgRed)
+console.warn   = logger(Colors.FgYellow)
+console.logc   = loggerc
+console.getLoggerOfColor = logger
+console.colors = Colors

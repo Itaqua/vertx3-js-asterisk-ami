@@ -10,8 +10,8 @@ export default React.createClass({
     const messagesList = messages.map(msg => {
       return (
         <div key={msg.id} className="row">
-          <img src={msg.whoAvatar}/>
-          <strong>{msg.who}: </strong>{msg.message}
+          <span class="col-xs-2"><img src={msg.whoAvatar}/></span>
+          <span class="col-xs-10"><strong>{msg.who}: </strong>{msg.message}</span>
         </div>
       )
     }).reverse()
